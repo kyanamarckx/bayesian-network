@@ -15,14 +15,22 @@ _____
 ### Repository structure
 ````text
 bayesian-network
+├── 0-installations/
+│   └── 0-installations.ipynb
 ├── 1-build/
 │   ├── 1-notes.md
-│   └── <...>
+│   ├── 01-buildBN.py
+│   ├── 02-inferenceExperiments.py
+│   └── figures/
+│       ├── 1-BN_phishing_detection.jpg
+│       └── 1-BN_phishing_detection.svg
 ├── 2-learn/
 │   ├── 2-notes.md
 │   └── <...>
+├── network/
+│   └── phishing_detection.bif
 ├── report/
-│   └── <...>
+│   └── Report_PhishingDetection-KyanaMarckx.pdf
 └── README.md
 ````
 
@@ -43,10 +51,21 @@ The objective is to construct a realistic probabilistic model, define its struct
 - Validation of the model through inference and probability analysis
 
 ### Results
-<*to be added after completing the experiments*>
+The Bayesian Network was evaluated through a series of probabilistic inference experiments to validate its behavior under different phishing scenarios.
+
+Key findings include:
+- The prior probability of an email being classified as phishing is approximately **19.31%**
+- Introducing a suspicious sender increases this probability to **50.92%**
+- When all phishing indicators are present simultaneously, the probability rises to **95%**
+- User awareness strongly influences behaviour:
+  - High awareness leads to a **60%** click probability in phishing scenarios
+  - Low awareness increases this to **90%**
+- In a full end-to-end attack scenario, the probability of account compromise reaches **61.03%**
+
+These results confirm that the model behaves consistently with expected cybersecurity behavior: phishing indicators increase risk, while user awareness mitigates it. The probabilistic dependencies in the network successfully propagate risk from email characteristics to user actions and final security outcomes.
 
 
-## :globe_with_meridians: 2 - Learn a Bayesian network with pyAgrum
+## :globe_with_meridians: 2 - Learn a Bayesian network in pyAgrum
 In Task 2, sythetic datasets generated from the original Bayesian Network are used to investigate Bayesian Network learning algorithms available in pyAgrum.
 
 Both search-and-score and constraint-based approaches are evaluated with respect to their ability to recover the original network structure. Additionally, the learned networks are compared with the original model and a Naive Bayes classifier in a classification setting.
