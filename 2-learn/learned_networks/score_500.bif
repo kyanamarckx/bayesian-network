@@ -1,0 +1,68 @@
+network "unnamedBN" {
+// written by aGrUM 2.3.2
+}
+
+variable SenderReputation {
+   type discrete[2] {good, suspicious};
+}
+
+variable EmailGrammar {
+   type discrete[2] {good, poor};
+}
+
+variable ContainsLinks {
+   type discrete[2] {no, yes};
+}
+
+variable UrgencyLanguage {
+   type discrete[2] {no, yes};
+}
+
+variable PhishingEmail {
+   type discrete[2] {no, yes};
+}
+
+variable UserAwareness {
+   type discrete[2] {high, low};
+}
+
+variable ClickLink {
+   type discrete[2] {no, yes};
+}
+
+variable AccountCompromised {
+   type discrete[2] {no, yes};
+}
+
+probability (SenderReputation | PhishingEmail) {
+   (no) 0.9060913705583756 0.09390862944162437;
+   (yes) 0.5094339622641509 0.49056603773584906;
+}
+probability (EmailGrammar | PhishingEmail) {
+   (no) 0.8527918781725888 0.14720812182741116;
+   (yes) 0.7169811320754716 0.2830188679245283;
+}
+probability (ContainsLinks | PhishingEmail) {
+   (no) 0.43908629441624364 0.5609137055837563;
+   (yes) 0.2358490566037736 0.7641509433962265;
+}
+probability (UrgencyLanguage | PhishingEmail) {
+   (no) 0.7157360406091371 0.28426395939086296;
+   (yes) 0.5377358490566038 0.46226415094339623;
+}
+probability (PhishingEmail | ClickLink) {
+   (no) 0.935656836461126 0.064343163538874;
+   (yes) 0.3543307086614173 0.6456692913385826;
+}
+probability (UserAwareness | ClickLink) {
+   (no) 0.7024128686327078 0.2975871313672922;
+   (yes) 0.4094488188976378 0.5905511811023622;
+}
+probability (ClickLink) {
+   table 0.746 0.254;
+}
+probability (AccountCompromised | ClickLink) {
+   (no) 0.9946380697050938 0.005361930294906166;
+   (yes) 0.25196850393700787 0.7480314960629921;
+}
+
