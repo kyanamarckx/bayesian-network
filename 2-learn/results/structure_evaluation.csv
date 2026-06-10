@@ -1,0 +1,7 @@
+Model,Algorithm,Samples,Correct Edges,Missing Edges,Extra Edges
+score_100,Score-Based,100,2,5,2
+score_500,Score-Based,500,1,6,6
+score_1000,Score-Based,1000,4,3,5
+constraint_100,Constraint-Based,100,3,4,1
+constraint_500,Constraint-Based,500,5,2,2
+constraint_1000,Constraint-Based,1000,5,2,2
