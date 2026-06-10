@@ -26,7 +26,27 @@ bayesian-network
 │       └── 1-BN_phishing_detection.svg
 ├── 2-learn/
 │   ├── 2-notes.md
-│   └── <...>
+│   ├── 01-generateData.py
+│   ├── 02-structureLearning.py
+│   ├── 03-structureEvaluation.py
+│   ├── 04-classifierComparison.py
+│   ├── data/
+│   │   ├── structure_learning_100.csv
+│   │   ├── structure_learning_500.csv
+│   │   ├── structure_learning_1000.csv
+│   │   ├── test.csv
+│   │   └── train.csv
+│   ├── learned_networks/
+│   │   ├── constraint_100.bif
+│   │   ├── constraint_500.bif
+│   │   ├── constraint_1000.bif
+│   │   ├── score_100.bif
+│   │   ├── score_500.bif
+│   │   └── score_1000.bif
+│   ├── results/
+│   │   └── structure_evaluation.csv
+│   └── figures/
+│   │   └── roc_comparison.png
 ├── network/
 │   └── phishing_detection.bif
 ├── report/
