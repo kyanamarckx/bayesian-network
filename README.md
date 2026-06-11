@@ -102,7 +102,7 @@ Both search-and-score and constraint-based approaches are evaluated with respect
 Task 2 investigates both structure learning and classification performance of Bayesian Networks using synthetic data generated from the original phishing detection model.
 
 #### Structure learning results
-Two structure learning approaches were evaluated: a search-and-score method (greedy hill climbing with BIC scoring) and a constraint-based dependency learning approach (MICC). Both methods were tested on datasets of increasing size (100, 500, and 1000 samples).
+Two structure learning approaches were evaluated: a search-and-score method (greedy hill climbing with BIC scoring) and a constraint-based dependency learning approach (MIIC). Both methods were tested on datasets of increasing size (100, 500, and 1000 samples).
 
 The results show a clear influence of sample size on structure recovery. Smaller datasets lead to incomplete or noise network structures, while larger datasets significantly improve recovery of the original dependencies. The search-and-score approach generally achieved more stable and accurate reconstructions compared to the constraint-based method.
 
@@ -121,7 +121,7 @@ Final AUC results:
 | Learned BN | 0.846 |
 | Naive Bayes | 0.967 |
 
-The learned Bayesian Network significantly improves over the original model in predictive performance, indicating that structure learning captues useful dependencies from data. Surprisingly, the Naive Bayes classifier achieved the highest AUC, suggesting that despite its strong independence assumptions, it performs very well in this classification task due to the relatively strong signal in the features.
+The learned Bayesian Network significantly improves over the original model in predictive performance, indicating that structure learning captures useful dependencies from data. Surprisingly, the Naive Bayes classifier achieved the highest AUC, suggesting that despite its strong independence assumptions, it performs very well in this classification task due to the relatively strong signal in the features.
 
 
 ## :blue_book: Report
