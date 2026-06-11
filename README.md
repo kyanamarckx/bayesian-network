@@ -44,6 +44,7 @@ bayesian-network
 │   │   ├── score_500.bif
 │   │   └── score_1000.bif
 │   ├── results/
+│   │   ├── auc_scores.csv
 │   │   └── structure_evaluation.csv
 │   └── figures/
 │       └── roc_comparison.png
