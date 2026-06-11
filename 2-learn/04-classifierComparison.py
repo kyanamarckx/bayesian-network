@@ -112,6 +112,14 @@ def main():
     print(f"Learned BN: {auc_learned:.3f}")
     print(f"Naive Bayes: {auc_nb:.3f}")
 
+    # Save AUC scores to CSV
+    auc_scores = pd.DataFrame({
+        "Model": ["Original BN", "Learned BN", "Naive Bayes"],
+        "AUC": [auc_orig, auc_learned, auc_nb]
+    })
+    auc_scores.to_csv("2-learn/results/auc_scores.csv", index=False)
+    
+
 if __name__ == "__main__":
     main()
     print("5 - Classification comparison completed and ROC curve saved in '2-learn/figures/roc_comparison.png'!")
