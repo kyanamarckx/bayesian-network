@@ -28,6 +28,14 @@ def predict_proba_bn(bn, df):
 
     probabilities = []
 
+    variable = bn.variableFromName("PhishingEmail")
+    yes_index = None
+
+    for i in range(variable.domainSize()):
+        if variable.label(i) == "yes":
+            yes_index = i
+            break
+
     for _, row in df.iterrows():
         ie.setEvidence({
             "SenderReputation": row["SenderReputation"],
@@ -38,7 +46,7 @@ def predict_proba_bn(bn, df):
 
         ie.makeInference()
 
-        prob = ie.posterior("PhishingEmail")[1] # Probability of "yes"
+        prob = ie.posterior("PhishingEmail")[yes_index] # Probability of "yes"
         probabilities.append(prob)
 
     return np.array(probabilities)
