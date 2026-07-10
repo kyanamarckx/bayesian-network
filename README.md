@@ -104,7 +104,7 @@ Task 2 investigates both structure learning and classification performance of Ba
 #### Structure learning results
 Two structure learning approaches were evaluated: a search-and-score method (greedy hill climbing with BIC scoring) and a constraint-based dependency learning approach (MIIC). Both methods were tested on datasets of increasing size (100, 500, and 1000 samples).
 
-The results show a clear influence of sample size on structure recovery. Smaller datasets lead to incomplete or noise network structures, while larger datasets significantly improve recovery of the original dependencies. The search-and-score approach generally achieved more stable and accurate reconstructions compared to the constraint-based method.
+The results show a clear influence of sample size on structure recovery. Smaller datasets lead to incomplete or noise network structures, while larger datasets significantly improve recovery of the original dependencies. The constraint-based approach generally achieved more stable and accurate reconstructions compared to the search-and-score method.
 
 #### Classification results
 Three models were compared in a classification setting:
@@ -117,11 +117,11 @@ Performance was evaluated using ROC curves and AUC scores on a held-out test set
 Final AUC results:
 | Setting | AUC |
 | :--- | :---: |
-| Original BN | 0.155 |
-| Learned BN | 0.846 |
+| Original BN | 0.845 |
+| Learned BN | 0.847 |
 | Naive Bayes | 0.967 |
 
-The learned Bayesian Network significantly improves over the original model in predictive performance, indicating that structure learning captures useful dependencies from data. Surprisingly, the Naive Bayes classifier achieved the highest AUC, suggesting that despite its strong independence assumptions, it performs very well in this classification task due to the relatively strong signal in the features.
+The learned Bayesian Network achieved nearly identical classification performance comparable to the original expert-designed model, demonstrating that the learned structure successfully captured the essential relationships in the data. The Naive Bayes classifier obtained the highest AUC (0.967), indicating that the selected features are highly informative for phishing detection despite the model's simplifying independence assumptions.
 
 
 ## :blue_book: Report

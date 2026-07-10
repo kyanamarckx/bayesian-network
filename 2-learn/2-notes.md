@@ -56,5 +56,5 @@ Classification performance was evaluated using:
 
 ## Results summary
 - Structure learning performance improves with increasing sample size.
-- Constraint-based learning provides more stable and accurate structures than score-based learning.
+- Constraint-based learning provides more stable and accurate structures than search-and-score based learning.
 - Naive Bayes achieves the best classification performance despite its independence assumptions.
